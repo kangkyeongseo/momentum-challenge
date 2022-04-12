@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>MOMENTUM</title>
   </head>
   <body>
     <div class="clock"></div>
+    <form class="greeting-form">
+      <input required type="text" placeholder="What's Your Name?" />
+      <input type="submit" value="Log In" />
+    </form>
+    <div class="greeting hidden">
+      <span></span>
+      <button>Log Out</button>
+    </div>
   </body>
   <script src="js/clock.js"></script>
+  <script src="js/greeting.js"></script>
 </html>

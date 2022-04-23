@@ -8,6 +8,28 @@
     <title>MOMENTUM</title>
   </head>
   <body>
+    <div class="water-container">
+      <div class="water-container__title">목표량</div>
+      <div class="water-gauge"></div>
+    </div>
+    <div class="water-controller">
+      <div class="water-contriller__set">
+        <form>
+          <input type="submit" value="1L" id="one-liter" />
+          <input type="submit" value="2L" id="two-liter" />
+          <input type="submit" value="3L" id="three-liter" />
+        </form>
+      </div>
+      <div class="water-contriller__go hidden">
+        <form>
+          <input type="submit" value="100ml" />
+          <input type="submit" value="300ml" />
+          <input type="submit" value="500mlL" />
+        </form>
+        <button class="water-controller__reset">reset</button>
+      </div>
+    </div>
+
     <div class="clock"></div>
     <form class="greeting-form">
       <input required type="text" placeholder="What's Your Name?" />
@@ -57,6 +79,7 @@
   <script src="js/background.js"></script>
   <script src="js/weather.js"></script>
   <script src="js/audio.js"></script>
+  <script src="js/water.js"></script>
   <script
     src="https://kit.fontawesome.com/1e841ee03e.js"
     crossorigin="anonymous"

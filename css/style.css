@@ -1,3 +1,45 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 .hidden {
   display: none;
+}
+
+.water-container {
+  position: relative;
+  width: 10rem;
+  height: 5rem;
+  overflow: hidden;
+}
+
+.water-container__title {
+  position: absolute;
+  left: 36%;
+  top: 65%;
+}
+
+.water-gauge {
+  position: relative;
+  background: transparent;
+  border: 35px solid rgb(74, 132, 204);
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+}
+
+.water-gauge::before {
+  position: absolute;
+  top: -35px;
+  left: -35px;
+  content: "";
+  border: 35px solid rgb(30, 71, 121);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  transform: rotate(45deg);
 }

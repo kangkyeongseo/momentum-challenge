@@ -1,9 +1,9 @@
 const waterTitle = document.querySelector(".water-container__title");
 const waterGauge = document.querySelector(".water-gauge");
-const setController = document.querySelector(".water-contriller__set");
-const goController = document.querySelector(".water-contriller__go");
-const setForm = document.querySelector(".water-contriller__set form");
-const goForm = document.querySelector(".water-contriller__go form");
+const setController = document.querySelector(".water-controller__set");
+const goController = document.querySelector(".water-controller__go");
+const setForm = document.querySelector(".water-controller__set form");
+const goForm = document.querySelector(".water-controller__go form");
 const resetBtn = document.querySelector(".water-controller__reset");
 
 const HIDDEN_CLASS = "hidden";
@@ -17,10 +17,10 @@ function printAngle(goal) {
   const angle = (goal.amount / (goal.goal * 1000)) * 180;
   if (angle <= 180) {
     waterGauge.style.transform = `rotate(${angle}deg)`;
-    waterTitle.innerText = `${goal.amount / 1000}L/${goal.goal}L`;
+    waterTitle.innerText = `${goal.amount / 1000}L / ${goal.goal}L`;
   } else {
     waterGauge.style.transform = `rotate(180deg)`;
-    waterTitle.innerText = `${goal.goal}L/${goal.goal}L`;
+    waterTitle.innerText = `${goal.goal}L / ${goal.goal}L`;
   }
 }
 
@@ -30,7 +30,7 @@ function handleResetBtn() {
   setController.classList.remove(HIDDEN_CLASS);
   goController.classList.add(HIDDEN_CLASS);
   waterGauge.style.transform = `rotate(0deg)`;
-  waterTitle.innerText = "목표량";
+  waterTitle.innerText = "수분 목표량";
 }
 
 function handleGoForm(event, goal) {

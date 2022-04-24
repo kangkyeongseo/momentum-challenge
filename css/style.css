@@ -1,45 +1,56 @@
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+
+@import "reset.css";
+@import "clock.css";
+@import "greeting.css";
+@import "todo.css";
+@import "quotes.css";
+@import "weather.css";
+@import "background.css";
+@import "audio.css";
+@import "water.css";
+
+body {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  color: #fff;
+}
+.fixed-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: absolute;
+  right: 100px;
+  top: 80px;
+}
+
+.fixed-box {
+  position: fixed;
+  right: 100px;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .hidden {
   display: none;
 }
 
-.water-container {
-  position: relative;
-  width: 10rem;
-  height: 5rem;
-  overflow: hidden;
-}
-
-.water-container__title {
-  position: absolute;
-  left: 36%;
-  top: 65%;
-}
-
-.water-gauge {
-  position: relative;
-  background: transparent;
-  border: 35px solid rgb(74, 132, 204);
-  border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-}
-
-.water-gauge::before {
-  position: absolute;
-  top: -35px;
-  left: -35px;
-  content: "";
-  border: 35px solid rgb(30, 71, 121);
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-  transform: rotate(45deg);
+.hidden--visibility {
+  opacity: 0;
+  visibility: hidden;
 }

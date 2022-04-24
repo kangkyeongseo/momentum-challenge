@@ -1,0 +1,17 @@
+.quotes-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 10px;
+}
+
+.quotes-text {
+  font-weight: 700;
+}
+
+.quotes-author {
+  font-size: 14px;
+  margin-left: 5px;
+}

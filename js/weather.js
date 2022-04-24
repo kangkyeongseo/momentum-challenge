@@ -1,6 +1,6 @@
 const tempBox = document.querySelector(".weather-container__temp");
-const weatherBOx = document.querySelector(".weather-container__weather");
-const cityBOx = document.querySelector(".weather-container__city");
+const weatherBox = document.querySelector(".weather-container__weather");
+const cityBox = document.querySelector(".weather-container__city");
 
 function successGetPosition(position) {
   const lat = position.coords.latitude;
@@ -15,14 +15,15 @@ function successGetPosition(position) {
       const weather = data.weather[0].main;
       const city = data.name;
 
-      tempBox.innerText = temp;
-      weatherBOx.innerText = weather;
-      cityBOx.innerHTML = city;
+      tempBox.innerText = `${temp}°C`;
+      weatherBox.innerText = weather;
+      cityBox.innerHTML = city;
     });
 }
 
 function errorGetPosition() {
   console.log("Sorry, no position available.");
+  weatherBox.innerText = "Sorry, no position available.";
 }
 
 navigator.geolocation.getCurrentPosition(successGetPosition, errorGetPosition);

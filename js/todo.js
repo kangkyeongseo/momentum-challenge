@@ -30,7 +30,7 @@ function handleStarClick(star) {
 }
 
 function removeTodo(todo) {
-  const removeList = todo.target.parentElement;
+  const removeList = todo.target.parentElement.parentElement;
   removeList.remove();
   filterdTodo = todoArray.filter((todo) => {
     return todo.id !== parseInt(removeList.id);
@@ -52,7 +52,7 @@ function removeImportant(todo) {
 function handleCheckBox(check) {
   const checkIcon = check.target;
   const checkOrder = todoArray.findIndex((todo) => {
-    return todo.id === parseInt(checkIcon.parentElement.id);
+    return todo.id === parseInt(checkIcon.parentElement.parentElement.id);
   });
 
   todoArray[checkOrder].check = !todoArray[checkOrder].check;
@@ -86,14 +86,17 @@ function printTodo(todo) {
   }
   checkBox.addEventListener("click", handleCheckBox);
 
-  const btn = document.createElement("buttton");
-  btn.innerText = "❌";
+  const btn = document.createElement("i");
+  btn.classList = "fas fa-trash-alt";
   btn.addEventListener("click", removeTodo);
+
+  const column = document.createElement("div");
+  column.appendChild(checkBox);
+  column.appendChild(btn);
 
   li.appendChild(star);
   li.appendChild(span);
-  li.appendChild(checkBox);
-  li.appendChild(btn);
+  li.appendChild(column);
 
   if (!todo.important) {
     todoList.appendChild(li);

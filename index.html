@@ -8,36 +8,13 @@
     <title>MOMENTUM</title>
   </head>
   <body>
-    <div class="water-container">
-      <div class="water-container__title">목표량</div>
-      <div class="water-gauge"></div>
-    </div>
-    <div class="water-controller">
-      <div class="water-contriller__set">
-        <form>
-          <input type="submit" value="1L" id="one-liter" />
-          <input type="submit" value="2L" id="two-liter" />
-          <input type="submit" value="3L" id="three-liter" />
-        </form>
-      </div>
-      <div class="water-contriller__go hidden">
-        <form>
-          <input type="submit" value="100ml" />
-          <input type="submit" value="300ml" />
-          <input type="submit" value="500mlL" />
-        </form>
-        <button class="water-controller__reset">reset</button>
-      </div>
-    </div>
-
     <div class="clock"></div>
     <form class="greeting-form">
       <input required type="text" placeholder="What's Your Name?" />
-      <input type="submit" value="Log In" />
+      <button><i class="fas fa-power-off"></i></button>
     </form>
-    <div class="greeting hidden">
+    <div class="greeting hidden--visibility">
       <span></span>
-      <button>Log Out</button>
     </div>
     <form class="todo-form">
       <input type="text" placeholder="Write a to do" />
@@ -48,28 +25,71 @@
       <span class="quotes-text"></span>
       <span class="quotes-author"></span>
     </div>
-    <div class="weather-container">
-      <span class="weather-container__temp"></span>
-      <span class="weather-container__weather"></span>
-      <span class="weather-container__city"></span>
-    </div>
-    <div class="audio-container">
-      <div class="audio-album">
-        <img src="" />
-        <div class="audio-album__info">
-          <span class="audio-album__title"></span>
-          <span class="audio-album__singer"></span>
+    <button class="fixed-btn fixed-btn--close">x</button>
+    <button class="fixed-btn fixed-btn--open hidden">▾</button>
+    <div class="fixed-box">
+      <div class="audio-container">
+        <div class="audio-container__column">
+          <div class="audio-album">
+            <img src="" />
+            <div class="audio-album__info">
+              <span class="audio-album__title"></span>
+              <span class="audio-album__singer"></span>
+            </div>
+          </div>
+        </div>
+        <div class="audio-container__column">
+          <audio></audio>
+          <div class="audio-range">
+            <input id="audio-range__bar" type="range" value="0" />
+            <div class="audio-range__time">
+              <span class="audio-range__currnet">00:00</span>
+              <span class="audio-range__playtime">00:00</span>
+            </div>
+          </div>
+          <div class="audio-control">
+            <span class="audio-control__backword"
+              ><i class="fas fa-backward"></i
+            ></span>
+            <span class="audio-control__play"><i class="fas fa-play"></i></span>
+            <span class="audio-control__forword"
+              ><i class="fas fa-forward"></i
+            ></span>
+          </div>
         </div>
       </div>
-      <audio></audio>
-      <div class="audio-range">
-        <input id="audio-range__bar" type="range" value="0" />
-        <span class="audio-range__currnet">00:00</span>
-        <span class="audio-range__playtime">00:00</span>
+      <div class="water-check">
+        <div class="water-container">
+          <div class="water-container__title">수분 목표량</div>
+          <i class="fas fa-tint"></i>
+          <div class="water-gauge"></div>
+        </div>
+        <div class="water-controller">
+          <div class="water-controller__set">
+            <form>
+              <input type="submit" value="1L" id="one-liter" />
+              <input type="submit" value="2L" id="two-liter" />
+              <input type="submit" value="3L" id="three-liter" />
+            </form>
+          </div>
+          <div class="water-controller__go hidden">
+            <form>
+              <input type="submit" value="100ml" />
+              <input type="submit" value="300ml" />
+              <input type="submit" value="500mlL" />
+            </form>
+            <button class="water-controller__reset">RESET</button>
+          </div>
+        </div>
       </div>
-      <span class="audio-backword"><i class="fas fa-backward"></i></span>
-      <span class="audio-play"><i class="fas fa-play"></i></span>
-      <span class="audio-forword"><i class="fas fa-forward"></i></span>
+      <div class="weather-container">
+        <span class="weather-container__city"></span>
+        <span class="weather-container__weather"></span>
+        <span class="weather-container__temp"></span>
+      </div>
+      <div class="logout-continer">
+        <button class="logout-btn"><i class="fas fa-power-off"></i></button>
+      </div>
     </div>
   </body>
   <script src="js/clock.js"></script>
@@ -80,6 +100,7 @@
   <script src="js/weather.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/water.js"></script>
+  <script src="js/fixed.js"></script>
   <script
     src="https://kit.fontawesome.com/1e841ee03e.js"
     crossorigin="anonymous"

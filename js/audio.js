@@ -32,15 +32,16 @@ const audios = [
 ];
 
 const audioPlayer = document.querySelector(".audio-container audio");
-const playBtn = document.querySelector(".audio-play");
-const forwordkBtn = document.querySelector(".audio-forword");
-const backwordBtn = document.querySelector(".audio-backword");
+const playBtn = document.querySelector(".audio-control__play");
+const forwordkBtn = document.querySelector(".audio-control__forword");
+const backwordBtn = document.querySelector(".audio-control__backword");
 const audioRange = document.querySelector("#audio-range__bar");
 const current = document.querySelector(".audio-range__currnet");
 const playTime = document.querySelector(".audio-range__playtime");
 const albumImg = document.querySelector(".audio-album img");
 const albumTitle = document.querySelector(".audio-album__title");
 const albumSinger = document.querySelector(".audio-album__singer");
+const playBtnIcon = document.querySelector(".audio-control__play i");
 
 let playNumber = 0;
 let range = 0;
@@ -48,8 +49,12 @@ let range = 0;
 function handlePalyBtn() {
   if (audioPlayer.paused) {
     audioPlayer.play();
+    playBtnIcon.classList.remove("fa-play");
+    playBtnIcon.classList.add("fa-pause");
   } else {
     audioPlayer.pause();
+    playBtnIcon.classList.add("fa-play");
+    playBtnIcon.classList.remove("fa-pause");
   }
 }
 
@@ -90,11 +95,22 @@ audioPlayer.onloadedmetadata = () => {
 };
 audioPlayer.ontimeupdate = () => {
   const nowTime = audioPlayer.currentTime;
+  const totalTime = audioPlayer.duration;
   audioRange.value = nowTime;
   const timer = `${String(Math.floor(nowTime / 60)).padStart(2, "0")}:${String(
     Math.floor(nowTime % 60)
   ).padStart(2, "0")}`;
   current.innerText = timer;
+
+  const min = audioRange.min;
+  const max = audioRange.max;
+  const val = audioRange.value;
+  audioRange.style.backgroundSize =
+    ((val - min) * 100) / (max - min) + "% 100%";
+
+  if (nowTime === totalTime) {
+    setTimeout(handleForwordBtn, 2000);
+  }
 };
 audioRange.onchange = () => {
   const rangeTime = audioRange.value;

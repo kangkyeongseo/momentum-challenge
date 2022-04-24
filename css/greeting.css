@@ -1,0 +1,75 @@
+.greeting-form {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+
+.greeting-form input {
+  border: none;
+}
+
+.greeting-form input:focus {
+  outline: none;
+}
+
+.greeting-form input[type="text"] {
+  height: 70px;
+  font-size: 30px;
+  padding: 20px 0px;
+  border-radius: 50px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  margin: 0px 10px 0px 70px;
+}
+
+.greeting-form input[type="text"]:focus {
+  font-size: 50px;
+  height: 100px;
+  padding: 20px 10px;
+}
+
+.greeting-form button,
+.logout-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  background-color: #2e8156d8;
+  color: #fff;
+}
+
+.logout-btn {
+  background-color: #e32f2fca;
+}
+
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+
+.greeting span {
+  font-size: 4vw;
+  font-weight: 700;
+}
+
+.logout-continer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  height: 6rem;
+  padding: 15px 15px;
+  border-radius: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}

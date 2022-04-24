@@ -17,7 +17,16 @@ function handleLogoutClick() {
 }
 
 function printUserName(name) {
-  greetingName.innerText = `Hello ${name}!`;
+  const currentHours = new Date().getHours();
+  if (currentHours < 12 && currentHours > 6) {
+    greetingName.innerText = `Good Morning ${name}.`;
+  } else if (currentHours >= 12 && currentHours < 18) {
+    greetingName.innerText = `Good Afternoon ${name}.`;
+  } else if (currentHours >= 18 && currentHours < 24) {
+    greetingName.innerText = `Good Evening ${name}.`;
+  } else {
+    greetingName.innerText = `Good Night ${name}.`;
+  }
   greeting.classList.remove(HIDDEN_VISIBILTY);
   greetingForm.classList.add(HIDDEN_VISIBILTY);
   logoutBtn.addEventListener("click", handleLogoutClick);

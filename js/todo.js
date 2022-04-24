@@ -51,8 +51,9 @@ function removeImportant(todo) {
 
 function handleCheckBox(check) {
   const checkIcon = check.target;
+  const checkIconLi = checkIcon.parentElement.parentElement;
   const checkOrder = todoArray.findIndex((todo) => {
-    return todo.id === parseInt(checkIcon.parentElement.parentElement.id);
+    return todo.id === parseInt(checkIconLi.id);
   });
 
   todoArray[checkOrder].check = !todoArray[checkOrder].check;

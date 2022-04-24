@@ -19,6 +19,7 @@
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
 .todo-form input::placeholder {
@@ -27,6 +28,7 @@
 
 .todo-form input:focus {
   outline: none;
+  font-size: 2.2rem;
 }
 
 .todo-list li,
@@ -42,10 +44,15 @@
   margin-bottom: 10px;
 }
 
+.todo-list li:hover,
+.important-list li:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .important-list li {
   width: 30rem;
   font-size: 2.2rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 .todo-list li i,

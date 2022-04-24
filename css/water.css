@@ -6,7 +6,7 @@
   height: 14rem;
   padding: 30px 15px;
   border-radius: 1.2rem;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   margin-bottom: 30px;
 }
@@ -43,6 +43,7 @@
   border-radius: 50%;
   width: 15rem;
   height: 15rem;
+  transition: all 0.7s ease-in-out;
 }
 
 .water-gauge::before {

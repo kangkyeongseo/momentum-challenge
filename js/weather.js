@@ -1,6 +1,8 @@
 const tempBox = document.querySelector(".weather-container__temp");
 const weatherBox = document.querySelector(".weather-container__weather");
 const cityBox = document.querySelector(".weather-container__city");
+const iconBox = document.querySelector(".weather-container__icon");
+const weatherIcon = document.querySelector(".weather-container__icon img");
 
 function successGetPosition(position) {
   const lat = position.coords.latitude;
@@ -14,7 +16,9 @@ function successGetPosition(position) {
       const temp = Math.round(data.main.temp);
       const weather = data.weather[0].main;
       const city = data.name;
+      const icon = data.weather[0].icon;
 
+      weatherIcon.src = `http:openweathermap.org/img/wn/${icon}.png`;
       tempBox.innerText = `${temp}°C`;
       weatherBox.innerText = weather;
       cityBox.innerHTML = city;

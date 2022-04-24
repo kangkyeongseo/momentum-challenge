@@ -49,6 +49,22 @@ function removeImportant(todo) {
   importantSave();
 }
 
+function animateCheckBox(event) {
+  const checkBoxScale = [
+    { transform: "scale(1)" },
+    { transform: "scale(0.95)" },
+    { transform: "scale(1)" },
+  ];
+
+  const checkBoxTiming = {
+    duration: 100,
+    iterations: 1,
+  };
+
+  const animateList = event.target.parentElement.parentElement;
+  animateList.animate(checkBoxScale, checkBoxTiming);
+}
+
 function handleCheckBox(check) {
   const checkIcon = check.target;
   const checkIconLi = checkIcon.parentElement.parentElement;
@@ -86,6 +102,7 @@ function printTodo(todo) {
     checkBox.classList = "far fa-square";
   }
   checkBox.addEventListener("click", handleCheckBox);
+  checkBox.addEventListener("click", animateCheckBox);
 
   const btn = document.createElement("i");
   btn.classList = "fas fa-trash-alt";
